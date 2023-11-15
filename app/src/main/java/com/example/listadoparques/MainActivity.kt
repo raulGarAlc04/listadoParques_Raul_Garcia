@@ -15,8 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = ParkAdapter(ParkProvider.parkList)
-        binding.recyclerPark.layoutManager = LinearLayoutManager(this)
         binding.recyclerPark.adapter = adapter
+        binding.recyclerPark.layoutManager = LinearLayoutManager(this)
+
 
         binding.filtro.addTextChangedListener {filtro ->
             val filtroParque = ParkProvider.parkList.filter {park ->
